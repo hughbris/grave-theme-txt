@@ -43,6 +43,7 @@
 	<div id="page-wrapper">
 
 {% block header %}
+
 	<!-- Header -->
 		<header id="header">
 			<div class="logo container">
@@ -55,21 +56,13 @@
 			</div>
 		</header>
 
-{#
-	<div class="header">
-		<div class="wrapper padding">
-			<a class="logo left" href="{{ home_url }}">
-				<i class="fa fa-rebel"></i>
-				{{ config.site.title }}
-			</a>
-			{% block header_navigation %}
-			<nav class="main-nav">
-				{% include 'partials/navigation.html.twig' %}
-			</nav>
-			{% endblock %}
-		</div>
-	</div>
-#}
+	{% block header_navigation %}
+	<!-- Nav -->
+		<nav id="nav">
+			{% include 'partials/navigation.html.twig' %}
+		</nav>
+	{% endblock %}
+
 {% endblock %}
 
 {% block body %}
