@@ -43,6 +43,19 @@
 	<div id="page-wrapper">
 
 {% block header %}
+	<!-- Header -->
+		<header id="header">
+			<div class="logo container">
+				<div>
+					<h1><a href="{{ home_url }}" id="logo">{{ theme_config.heading|default(site.title) }}</a></h1>
+					{%- if theme_config.subheading is defined %}
+						<p>{{ theme_config.subheading }}</p>
+					{% endif -%}
+				</div>
+			</div>
+		</header>
+
+{#
 	<div class="header">
 		<div class="wrapper padding">
 			<a class="logo left" href="{{ home_url }}">
@@ -56,6 +69,7 @@
 			{% endblock %}
 		</div>
 	</div>
+#}
 {% endblock %}
 
 {% block body %}

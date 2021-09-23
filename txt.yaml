@@ -1,3 +1,5 @@
 enabled: true
+heading: Txt
+subheading: 'A responsive site template by HTML5 UP'
 dropdown:
   enabled: true
