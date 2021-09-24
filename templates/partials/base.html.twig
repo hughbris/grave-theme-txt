@@ -66,11 +66,14 @@
 {% endblock %}
 
 {% block body %}
-	<section id="body">
-		<div class="wrapper padding">
-		{% block content %}{% endblock %}
-		</div>
-	</section>
+	<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div class="row">
+					{% block content %}{% endblock %}
+				</div>
+			</div>
+		</section>
 {% endblock %}
 
 {% block footer %}
