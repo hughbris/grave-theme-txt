@@ -1,0 +1,14 @@
+<div class="col-12">
+
+	<!-- Features -->
+		<section class="box features">
+			<h2 class="major"><span>{{ page.title }}</span></h2>
+			<div>
+				<div class="row">
+					{% for feature in page.collection({'items':'@self.modules', 'filter': {'type': 'modular/feature'}}).order('header.position', 'asc') %}
+						{{ feature.content|raw }}
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+</div>

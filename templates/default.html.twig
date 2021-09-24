@@ -31,3 +31,10 @@
 		</div>
 	</div>
 {% endblock %}
+
+{% block features %}
+	{% set feature_sets = page.collection({'items':'@self.modules', 'filter': {'type': 'modular/features'}}).order('header.position', 'asc') %}
+	{% for feature_set in feature_sets %}
+		{{ feature_set.content|raw }}
+	{% endfor %}
+{% endblock %}
