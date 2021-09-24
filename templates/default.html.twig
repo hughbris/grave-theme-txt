@@ -9,11 +9,10 @@
 				<article class="box page-content">
 					<header>
 						<h2>{{ page.title }}</h2>
-						<p>{{ page.header.subtitle }}</p>
-						<ul class="meta">
-							<li class="icon fa-clock">{{ page.date|nicetime }}</li>
-							<li class="icon fa-comments"><a href="#">1,024</a></li>{# FIXME #}
-						</ul>
+						{% if page.header.subtitle is defined %}<p>{{ page.header.subtitle }}</p>{% endif %}
+						{% if page.header.heading.metadata|default(false) %}
+							{% include 'partials/heading-metadata.html.twig' ignore missing %}
+						{% endif %}
 					</header>
 
 					<section>
