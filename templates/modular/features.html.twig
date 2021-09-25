@@ -9,6 +9,15 @@
 						{{ feature.content|raw }}
 					{% endfor %}
 				</div>
+				{% if page.header.cta is defined %}
+					<div class="col-12">
+						<ul class="actions">
+						{% for button in page.header.cta %}
+							<li><a href="{{ button.target }}" class="button large{% if button.classes is defined %} {{ button.classes }}{% endif %}">{{ button.text }}</a></li>
+						{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
 			</div>
 		</section>
 </div>
