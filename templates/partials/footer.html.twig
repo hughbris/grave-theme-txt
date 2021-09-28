@@ -1,0 +1,33 @@
+<div class="row gtr-200">
+	<div class="col-12">
+
+		<!-- About -->
+			<section>
+				<h2 class="major"><span>What's this about?</span></h2>
+				{{ config.site.metadata.about|raw }}
+			</section>
+
+	</div>
+	<div class="col-12">
+
+		<!-- Contact -->
+			<section>
+				<h2 class="major"><span>Get in touch</span></h2>
+				<ul class="contact">
+				{% for network, account in config.site.globals.social %}
+					{% set social_network = theme_config.social_networks[network] %}
+					{% if social_network is not empty %}
+						<li><a class="icon brands fa-{{ social_network.icon|default(network|lower) }}" href="{{ evaluate_twig(social_network.permalinks, {u: account}) }}"><span class="label">{{ social_network.label|default(network|capitalize) }}</span'></a></li>
+					{% else %}
+						{{ dump("Warning: social network \"#{network}\" from site.yaml is not defined in txt.yaml, unable to show icon in footer.") }}
+					{% endif %}
+				{% endfor %}
+				</ul>
+			</section>
+
+	</div>
+</div>
+
+{% block rights %}
+	{% include 'partials/rights.html.twig' %}
+{% endblock %}

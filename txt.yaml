@@ -3,3 +3,17 @@ heading: Txt
 subheading: 'A responsive site template by HTML5 UP'
 dropdown:
   enabled: true
+
+social_networks: # the text '{{ account }}' will be substituted for the account name provided in site.yaml
+  facebook:
+    icon: facebook-f
+    permalinks: 'https://facebook.com/u/{{ account }}'
+  twitter:
+    permalinks: 'https://twitter.com/u/{{ account }}'
+  instagram:
+    permalinks: 'https://twitter.com/{{ account }}'
+  dribbble:
+    permalinks: 'https://{{ account }}.dribble.com'
+  linkedin:
+    label: LinkedIn
+    permalinks: 'https://www.linkedin.com/in/{{ account }}'
