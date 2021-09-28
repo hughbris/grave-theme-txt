@@ -1,0 +1,40 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<div class="col-12">
+		<div class="content">
+
+			<!-- Content -->
+
+				<article class="box page-content">
+					<header>
+						<h2>{{ page.title }}</h2>
+						{% if page.header.subtitle is defined %}<p>{{ page.header.subtitle }}</p>{% endif %}
+						{% if page.header.heading.metadata|default(false) %}
+							{% include 'partials/heading-metadata.html.twig' ignore missing %}
+						{% endif %}
+					</header>
+
+					<section>
+						{% if page.header.feature is defined -%}
+							<span class="image featured"><img src="{{ page.media[page.header.feature.image].url }}" alt="{{ page.header.feature.alt|default('') }}" /></span>{# FIXME: page header subject to reformatting after rediscovering the file upload or pagemediaselect rendered format #}
+						{%- endif %}
+						{{ page.content|raw }}
+					</section>
+
+					{% set sections = page.collection({'items':'@self.modules', 'filter': {'type': 'modular/section'}}).order('header.position', 'asc') %}
+					{% for section in sections %}
+						{{ section.content|raw }}
+					{% endfor %}
+
+				</article>
+		</div>
+	</div>
+{% endblock %}
+
+{% block features %}
+	{% set feature_sets = page.collection({'items':'@self.modules', 'filter': {'type': 'modular/features'}}).order('header.position', 'asc') %}
+	{% for feature_set in feature_sets %}
+		{{ feature_set.content|raw }}
+	{% endfor %}
+{% endblock %}
