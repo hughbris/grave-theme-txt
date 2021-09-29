@@ -1,0 +1,10 @@
+<section>
+	<h2 class="major"><span>{{ page.title }}</span></h2>
+	{% if page.header.feature is defined %}
+		<a href="{{ page.header.feature.image }}" class="image featured"><img src="{{ page.media[page.header.feature.image].url }}" alt="{{ page.header.feature.alt|default('') }}" /></a>
+	{% endif %}
+	{{ page.content|raw }}
+	{% if page.header.cta is defined %}
+	<a href="{{ page.header.cta.target }}" class="button alt">{{ page.header.cta.text }}</a>
+	{% endif %}
+</section>
