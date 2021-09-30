@@ -1,0 +1,31 @@
+{% extends 'no-sidebar.html.twig' %}
+
+{% block stylesheets %}
+
+	{# TODO: allow setting these in theme.yaml, which means you'd need to set this inline css as below ... #}
+	{#
+	{% set inline_css %}
+	#banner {
+		background-image: url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://images/banner.jpg') }}");
+	} 
+	{% endset %}
+	#}
+
+	{{ parent() }}
+	{# {% do assets.addInlineCss(inline_css) %} #}
+
+{% endblock %}
+
+{% block body %}
+	<!-- Banner -->
+		<section id="banner">
+			<div class="content">
+				<h2>Welcome to TXT by HTML5 UP</h2>
+				<p>A free responsive site template built on HTML5, CSS3, and some other stuff</p>
+				<a href="#main" class="button scrolly">Alright let's go</a>
+			</div>
+		</section>
+
+	{{ parent() }}
+
+{% endblock %}

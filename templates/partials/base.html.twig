@@ -14,7 +14,7 @@
 
 	{% include 'partials/metadata.html.twig' %}
 
-	<link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+	<link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" /> {# TODO: allow setting in theme.yaml #}
 	<link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
 
