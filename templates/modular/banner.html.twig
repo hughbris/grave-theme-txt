@@ -1,0 +1,10 @@
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<h2>{{ page.title }}</h2>
+		{{ page.content|raw }}
+		{% if page.header.cta is defined %}
+			<a href="{{ page.header.cta.target }}" class="button scrolly">{{ page.header.cta.text }}</a>
+		{% endif %}
+	</div>
+</section>

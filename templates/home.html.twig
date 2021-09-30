@@ -17,14 +17,7 @@
 {% endblock %}
 
 {% block body %}
-	<!-- Banner -->
-		<section id="banner">
-			<div class="content">
-				<h2>Welcome to TXT by HTML5 UP</h2>
-				<p>A free responsive site template built on HTML5, CSS3, and some other stuff</p>
-				<a href="#main" class="button scrolly">Alright let's go</a>
-			</div>
-		</section>
+	{{ (page.collection({'items':'@self.modules', 'filter': {'type':'modular/banner'}})|first).content|raw }} {# a very long and unsafe way to pick out the page's banner module #}
 
 	{{ parent() }}
 
