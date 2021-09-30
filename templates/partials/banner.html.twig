@@ -1,0 +1,1 @@
+{{ (page.collection({'items':'@self.modules', 'filter': {'type':'modular/banner'}})|first).content|raw }} {# a very long and unsafe way to pick out the page's banner module #}
