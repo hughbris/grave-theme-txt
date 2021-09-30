@@ -1,0 +1,19 @@
+<div class="col-12">
+	<!-- Highlight -->
+		<section class="box highlight">
+			{% if page.header.circles %}
+			<ul class="special">
+				{% for circle in page.header.circles %}
+				<li><a href="{{ circle.target }}" class="icon solid fa-{{ circle.icon }}"><span class="label">{{ circle.label }}</span></a></li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<header>
+				<h2>{{ page.title }}</h2>
+				{% if page.header.subtitle is defined %}
+					<p>{{ page.header.subtitle }}</p>
+				{% endif %}
+			</header>
+			{{ page.content|raw }}
+		</section>
+</div>

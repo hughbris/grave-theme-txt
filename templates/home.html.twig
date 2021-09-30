@@ -2,23 +2,41 @@
 
 {% block stylesheets %}
 
-	{# TODO: allow setting these in theme.yaml, which means you'd need to set this inline css as below ... #}
-	{#
+	{# TODO: allow setting these background paths in theme.yaml #}
 	{% set inline_css %}
 	#banner {
 		background-image: url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://images/banner.jpg') }}");
 	} 
 	{% endset %}
-	#}
 
 	{{ parent() }}
-	{# {% do assets.addInlineCss(inline_css) %} #}
+	{% do assets.addInlineCss(inline_css) %}
 
 {% endblock %}
 
 {% block body %}
 	{% include 'partials/banner.html.twig' %}
 
-	{{ parent() }}
+	<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div class="row gtr-200">
+
+				{% include 'partials/highlights.html.twig' %}
+
+{# 
+{% block content %}
+	<div class="col-12">
+		<div class="content">
+			{% include 'partials/page-content.html.twig' %}
+		</div>
+	</div>
+{% endblock %} #}
+
+					{# {% block content %}{% endblock %} #}
+					{% block features %}{% endblock %}
+				</div>
+			</div>
+		</section>
 
 {% endblock %}

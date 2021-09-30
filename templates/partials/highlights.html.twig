@@ -1,0 +1,4 @@
+{% set highlights = page.collection({'items':'@self.modules', 'filter': {'type':'modular/highlight'}}) %} {# a very long and unsafe way to pick out a (homepage) highlight module #}
+{% for highlight in highlights %} {# I guess we could have more than one #}
+	{{ highlight.content|raw }}
+{% endfor %}
