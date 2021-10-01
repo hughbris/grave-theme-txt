@@ -24,6 +24,10 @@
 
 				{% include 'partials/highlights.html.twig' %}
 
+				{% block features %}
+					{% include 'partials/page-features.html.twig' %}
+				{% endblock %}
+
 {# 
 {% block content %}
 	<div class="col-12">
@@ -34,7 +38,7 @@
 {% endblock %} #}
 
 					{# {% block content %}{% endblock %} #}
-					{% block features %}{% endblock %}
+					{# {% block features %}{% endblock %} #}
 				</div>
 			</div>
 		</section>
