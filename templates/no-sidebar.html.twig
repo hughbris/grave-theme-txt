@@ -3,7 +3,9 @@
 {% block content %}
 	<div class="col-12">
 		<div class="content">
-			{% include 'partials/page-content.html.twig' %}
+			{% block inner_content %}
+				{% include 'partials/page-content.html.twig' %}
+			{% endblock %}
 		</div>
 	</div>
 {% endblock %}

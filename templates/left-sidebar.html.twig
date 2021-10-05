@@ -11,7 +11,9 @@
 
 	<div class="col-9 col-12-medium imp-medium">
 		<div class="content">
-			{% include 'partials/page-content.html.twig' %}
+			{% block inner_content %}
+				{% include 'partials/page-content.html.twig' %}
+			{% endblock %}
 		</div>
 	</div>
 {% endblock %}
