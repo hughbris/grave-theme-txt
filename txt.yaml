@@ -11,7 +11,7 @@ social_networks: # the text '{{ account }}' will be substituted for the account 
   twitter:
     permalinks: 'https://twitter.com/u/{{ account }}'
   instagram:
-    permalinks: 'https://twitter.com/{{ account }}'
+    permalinks: 'https://www.instagram.com/{{ account }}'
   dribbble:
     permalinks: 'https://{{ account }}.dribble.com'
   linkedin:
