@@ -1,0 +1,14 @@
+enabled: true
+# heading:
+# subheading:
+dropdown:
+  enabled: true
+
+sidebar: # default sidebar items when page doesn't specify
+  - type: blog-roll
+    options:
+      limit: 3
+  - type: section
+    slug: ipsum-dolore
+  - type: section
+    slug: magna-feugiat

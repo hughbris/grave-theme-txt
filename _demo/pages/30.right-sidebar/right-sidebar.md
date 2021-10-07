@@ -6,15 +6,5 @@ heading:
 feature: # FIXME: this needs to follow the file upload format
     image: pic05.jpg
     # alt: 
-
-sidebar:
-    - type: blog-roll
-      options:
-        limit: 3
-    - type: section
-      slug: ipsum-dolore
-    - type: section
-      slug: magna-feugiat
-      # options:
 ---
 Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi consequat etiam lorem ipsum dolor sit amet nullam.
