@@ -1,0 +1,25 @@
+{% set blog = page.find('/blog') %}
+{% set blog_roll = blog.collection({'items': '@self.children', 'order': {'by': 'date', 'dir': 'desc'}, 'limit': item.options.limit}) %}
+
+{% if blog_roll|length > 0 %}
+<!-- Recent Posts -->
+	<section>
+		<h2 class="major"><span>Recent Posts</span></h2>
+		<ul class="divided">
+		{% for post in blog_roll %}
+			<li>
+				<article class="box post-summary">
+					<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+					<ul class="meta">
+						<li class="icon fa-clock">{{ post.date|nicetime }}</li>
+						<li class="icon fa-comments"><a href="#">34</a></li> {# FIXME #}
+					</ul>
+				</article>
+			</li>
+		{% endfor %}
+		</ul>
+		{% if blog.routable %}
+			<a href="{{ blog.url }}" class="button alt">Archives</a>
+		{% endif %}
+	</section>
+{% endif %}

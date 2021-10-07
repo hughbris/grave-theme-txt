@@ -1,0 +1,3 @@
+{% set section = page.find("/shared/_sidebars/_#{item.slug}") %} {# TODO: also check modular and child pages for the slug #}
+			<!-- Something -->
+{{ section.content|raw }}

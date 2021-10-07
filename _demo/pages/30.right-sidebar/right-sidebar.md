@@ -8,6 +8,9 @@ feature: # FIXME: this needs to follow the file upload format
     # alt: 
 
 sidebar:
+    - type: blog-roll
+      options:
+        limit: 3
     - type: section
       slug: ipsum-dolore
     - type: section
