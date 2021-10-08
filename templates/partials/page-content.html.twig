@@ -11,7 +11,12 @@
 
 		<section>
 			{% if page.header.feature is defined -%}
-				<span class="image featured"><img src="{{ page.media[page.header.feature.image].url }}" alt="{{ page.header.feature.alt|default('') }}" /></span>{# FIXME: page header subject to reformatting after rediscovering the file upload or pagemediaselect rendered format #}
+				<span class="{{ ['image featured', page.header.feature.classes]|join(' ')|trim }}">
+					<img src="{{ page.media[page.header.feature.image].url }}" alt="{{ page.header.feature.alt|default('') }}" />
+					{% if page.header.feature.credit is defined %}
+						<p class="caption">{{ page.header.feature.credit }}</p>
+					{% endif %}
+				</span>{# FIXME: page header subject to reformatting after rediscovering the file upload or pagemediaselect rendered format #}
 			{%- endif %}
 			{{ page.content|raw }}
 		</section>

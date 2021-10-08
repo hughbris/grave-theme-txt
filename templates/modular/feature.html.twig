@@ -2,7 +2,7 @@
 
 	<!-- Feature -->
 		<section class="box feature">
-			<a href="{{ page.header.feature.target }}" class="image featured"><img src="{{ page.media[page.header.feature.image].url }}" alt="{{ page.header.feature.alt|default('') }}" /></a>
+			<a href="{{ page.header.feature.target }}" class="{{ ['image featured', page.header.feature.classes]|join(' ')|trim }}"><img src="{{ page.media[page.header.feature.image].url }}" alt="{{ page.header.feature.alt|default('') }}" /></a>
 			<h3><a href="{{ page.header.feature.target }}">{{ page.title }}</a></h3>
 			{{ page.content|raw }}
 		</section>
