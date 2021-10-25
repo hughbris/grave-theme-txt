@@ -39,7 +39,7 @@
 {% endblock %}
 </head>
 
-<body id="top" class="{{ ('is-preload ' ~ page.header.body_classes)|trim }}">
+<body id="top" class="{{ ['is-preload', "template-#{page.template}", page.header.body_classes]|join(' ')|trim }}">
 	<div id="page-wrapper">
 
 {% block header %}
