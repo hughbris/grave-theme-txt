@@ -1,5 +1,6 @@
 {% set blog = page.find('/blog') %}
 {% set blog_roll = blog.collection({'items': '@self.children', 'order': {'by': 'date', 'dir': 'desc'}, 'limit': item.options.limit}) %}
+{% set comments = comments is defined ? comments : true %}
 
 {% if blog_roll|length > 0 %}
 <!-- Recent Posts -->
@@ -12,7 +13,9 @@
 					<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 					<ul class="meta">
 						<li class="icon fa-clock">{{ post.date|nicetime }}</li>
-						<li class="icon fa-comments"><a href="#">34</a></li> {# FIXME #}
+						{% if comments %}
+						<li class="icon fa-comments"><a href="#">34</a></li>
+						{% endif %} {# FIXME #}
 					</ul>
 				</article>
 			</li>
