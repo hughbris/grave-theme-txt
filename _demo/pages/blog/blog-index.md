@@ -1,6 +1,6 @@
 ---
 title: Blogroll
-routable: false
+# routable: false
 # blogroll:
 #     items: '@self.modular'
 #     order:
