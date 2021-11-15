@@ -34,9 +34,7 @@
 										{% if featured_post.header.feature.image is defined %}
 											<a href="#" class="image featured"><img src="{{ featured_post.media[featured_post.header.feature.image].url }}" alt="{{ featured_post.header.feature.alt|default('') }}" /></a>
 										{% endif %}
-										<p>
-											{{ featured_post.content|raw }}
-										</p>
+										{{ featured_post.summary(600)|raw }}
 										{% if blog.routable %}
 											<a href="{{ blog.url }}" class="button">Continue Reading</a>
 										{% endif %}
