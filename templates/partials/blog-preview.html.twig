@@ -20,7 +20,7 @@
 									{% set featured_post = blog_items|first %}
 									<article class="box post">
 										<header>
-											<h3><a href="#">{{ featured_post.title }}</a></h3>
+											<h3><a href="{{ featured_post.url }}">{{ featured_post.title }}</a></h3>
 											{% if featured_post.header.subtitle is defined %}
 											<p>{{ featured_post.header.subtitle|trim }}</p>
 											{% endif %}
