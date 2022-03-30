@@ -1,0 +1,22 @@
+{% if page.header.feature is defined and page.header.feature.image is defined -%}
+    {% set feature_image = page.media[page.header.feature.image] %}
+    {% if feature_image %} {# checks for image names that don't load with page.media[], it's possible #}
+        {# the precedence here is: page headers, then metafile; classes is assumed to only come from a page header #}
+        {% set feature = {
+            classes: page.header.feature.classes|default(''),
+            image: feature_image,
+            alt: page.header.feature.alt|default(feature_image.meta.alt)|default(''),
+            caption: page.header.feature.caption|default(feature_image.meta.caption)|default(false),
+            credit: page.header.feature.credit|default(feature_image.meta.credit)|default(false),
+            } %}
+        <span class="{{ ['image featured', feature.classes]|join(' ')|trim }}">
+            <img src="{{ feature.image.url }}" alt="{{ feature.alt }}" />
+            {% if feature.caption %}
+                <p class="actual caption">{{ feature.caption }}</p>
+            {% endif %}
+            {% if feature.credit %}
+                <p class="credit caption">{{ feature.credit }}</p>
+            {% endif %}
+        </span>
+    {% endif %}
+{%- endif %}
