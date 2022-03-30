@@ -1,0 +1,33 @@
+title: Right sidebar
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+            header.feature:
+              type: section
+              title: Feature Image
+              text: THEME_TXT.FEATURE_IMAGE_FIELD_HELP
+              # ordering@: media_order # not needed because it happens to be the last
+
+              fields:
+                .image:
+                  type: pagemediaselect
+                  label: Page Media Image
+
+                .classes:
+                  type: text
+                  # type: selectize
+                  label: Classes
+                  # validate:
+                  #   type: array
+
+                # not going to include .alt .caption or .credit here though they are supported in the template; they are best supplied in a .meta.yaml file (made easy with the admin-addon-media-metadata plugin)

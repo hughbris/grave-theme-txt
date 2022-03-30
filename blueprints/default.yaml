@@ -1,0 +1,19 @@
+title: Default
+extends@: parent@
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+            header.subtitle:
+              type: text
+              label: Subtitle
+              # style: vertical
+              ordering@: header.title
+
+            # TODO: header.heading.metadata but it's still only a placeholder/stub in template

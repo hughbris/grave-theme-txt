@@ -1,0 +1,3 @@
+en:
+    THEME_TXT:
+        FEATURE_IMAGE_FIELD_HELP: 'This is an optional image that is "featured" at the top of the page. You can set important information about it by setting image metadata in Page Media.'
