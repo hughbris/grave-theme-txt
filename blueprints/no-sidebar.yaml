@@ -1,0 +1,3 @@
+extends@:
+  - type: right-sidebar
+    context: blueprints://pages
