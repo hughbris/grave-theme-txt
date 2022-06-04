@@ -1,8 +1,8 @@
 {% set banner = page.header.banner %}
 <section id="banner">
 	<div class="content">
-		<h2>{{ banner.title }}</h2>
-		{{ banner.subtitle|markdown }}
+		<h2>{{ banner.heading }}</h2>
+		{{ banner.subheading|markdown }}
 		{% if banner.cta is defined %}
 			<a href="{{ banner.cta.target }}" class="button scrolly">{{ banner.cta.text }}</a>
 		{% endif %}
