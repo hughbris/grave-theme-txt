@@ -1,0 +1,48 @@
+title: Homepage
+extends@:
+  - type: no-sidebar
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+
+            header.banner:
+              type: section
+              title: Banner
+              text: "Set the text, button, and background of your banner here."
+              ordering@: header.title
+
+              fields:
+                .heading: # TODO stub
+                  type: text
+                  label: Heading
+                  validate:
+                    required: true
+
+                .subheading: # TODO stub
+                  type: text
+                  label: Subheading
+                  validate:
+                    required: true
+
+                .background:
+                  label: Background image
+                  type: filepicker
+                  folder: 'theme://images'
+                  preview_images: true
+                  accept:
+                    - .png
+                    - .jpg
+
+            content:
+              unset@: true
+
+            header.feature:
+              unset@: true

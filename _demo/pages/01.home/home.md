@@ -2,8 +2,8 @@
 menu: Homepage
 body_classes: homepage
 banner:
-    title: Welcome to TXT by HTML5 UP
-    subtitle: A free responsive site template built on HTML5, CSS3, and some other stuff
+    heading: Welcome to TXT by HTML5 UP
+    subheading: A free responsive site template built on HTML5, CSS3, and some other stuff
     # background: 
     cta:
         target: '#'
