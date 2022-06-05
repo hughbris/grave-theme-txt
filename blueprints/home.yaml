@@ -158,3 +158,18 @@ form:
                   codemirror:
                     mode: 'markdown'
                     lineNumbers: true
+
+            header.blog_preview:
+              type: section
+              title: Blog preview options
+              fields:
+                .heading:
+                  type: text
+                  label: Heading
+
+                .limit:
+                  type: number
+                  label: Posts to show
+                  help: How many blog posts to show in the homepage preview.
+                  validate:
+                    min: 2
