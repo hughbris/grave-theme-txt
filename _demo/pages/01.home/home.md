@@ -11,8 +11,8 @@ banner:
         text: "Alright let's go"
 highlights:
     enabled: true
-    title: A random assortment of icons in circles
-    subtitle: And some text that attempts to explain their significance
+    heading: A random assortment of icons in circles
+    subheading: And some text that attempts to explain their significance
     circles:
         -   icon: search
             target: '#'

@@ -10,11 +10,11 @@
 					{% endfor %}
 				</ul>
 				{% endif %}
-				{% if highlights.title is defined %}
+				{% if highlights.heading is defined %}
 				<header>
-					<h2>{{ highlights.title }}</h2>
-					{% if highlights.subtitle is defined %}
-						<p>{{ highlights.subtitle }}</p>
+					<h2>{{ highlights.heading }}</h2>
+					{% if highlights.subheading is defined %}
+						<p>{{ highlights.subheading }}</p>
 					{% endif %}
 				</header>
 				{% endif %}
