@@ -18,7 +18,7 @@
 					{% endif %}
 				</header>
 				{% endif %}
-				{% if highlights.blurb is defined %}
+				{% if highlights.blurb is defined and highlights.blurb|trim is not empty %}
 					{{ highlights.blurb|markdown }}
 				{% endif %}
 			</section>
