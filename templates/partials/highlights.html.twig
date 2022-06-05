@@ -1,4 +1,26 @@
-{% set highlights = page.collection({'items':'@self.modules', 'filter': {'type':'modular/highlight'}}) %} {# a very long and unsafe way to pick out a (homepage) highlight module #}
-{% for highlight in highlights %} {# I guess we could have more than one #}
-	{{ highlight.content|raw }}
-{% endfor %}
+{% set highlights = page.header.highlights %}
+{% if page.header.highlights.enabled|default(false) %}
+	<div class="col-12">
+		<!-- Highlight -->
+			<section class="box highlight">
+				{% if highlights.circles is defined %}
+				<ul class="special">
+					{% for circle in highlights.circles if (circle.active or circle.active is not defined) %}
+					<li><a href="{{ circle.target }}" class="icon solid fa-{{ circle.icon }}"><span class="label">{{ circle.label }}</span></a></li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{% if highlights.title is defined %}
+				<header>
+					<h2>{{ highlights.title }}</h2>
+					{% if highlights.subtitle is defined %}
+						<p>{{ highlights.subtitle }}</p>
+					{% endif %}
+				</header>
+				{% endif %}
+				{% if highlights.blurb is defined %}
+					{{ highlights.blurb|markdown }}
+				{% endif %}
+			</section>
+	</div>
+{% endif %}

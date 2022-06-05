@@ -15,14 +15,14 @@
 {% endblock %}
 
 {% block body %}
-	{% include 'partials/banner.html.twig' %}
+	{{ include('partials/banner.html.twig') }}
 
 	<!-- Main -->
 		<section id="main">
 			<div class="container">
 				<div class="row gtr-200">
 
-				{% include 'partials/highlights.html.twig' %}
+				{{ include('partials/highlights.html.twig') }}
 
 				{% block features %}
 					{% include 'partials/page-features.html.twig' %}
