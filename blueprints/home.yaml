@@ -79,3 +79,82 @@ form:
 
             header.feature:
               unset@: true
+
+        sections:
+          type: tab
+          title: Home Sections
+          ordering@: content
+          fields:
+            header.highlights:
+              type: section
+              title: Highlights
+              fields:
+                .enabled:
+                  type: toggle
+                  label: PLUGIN_ADMIN.ENABLED
+                  highlight: 1
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+
+                .heading:
+                  type: text
+                  label: Heading
+
+                .subheading:
+                  type: text
+                  label: Subheading
+
+                .circles:
+                  type: list
+                  label: Circle icon buttons
+                  collapsed: true
+                  fields:
+                    .label:
+                      type: text
+                      label: Label
+
+                    .icon:
+                      type: text
+                      label: Icon
+                      validate:
+                        required: true
+
+                    icon.tips:
+                      type: display
+                      content: "Take the icon name from the [list at FontAwesome](https://fontawesome.com/search?m=free)."
+                      label: false
+                      markdown: true
+                      classes: tip
+
+                    .target:
+                      type: pages
+                      label: Target page
+                      show_all: true
+                      show_modular: false
+                      show_root: false
+                      multiple: false
+                      validate:
+                        required: true
+
+                    .active:
+                      type: toggle
+                      label: Active
+                      highlight: 1
+                      options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                      validate:
+                        type: bool
+                        required: false
+
+                .blurb:
+                  type: editor
+                  label: Blurb
+                  help: A short piece of text that can appear after the circle buttons
+                  classes: brief
+                  codemirror:
+                    mode: 'markdown'
+                    lineNumbers: true
