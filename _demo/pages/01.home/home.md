@@ -6,6 +6,7 @@ banner:
     subheading: A free responsive site template built on HTML5, CSS3, and some other stuff
     # background: 
     cta:
+        enabled: true
         target: '#'
         text: "Alright let's go"
 ---

@@ -3,7 +3,7 @@
 	<div class="content">
 		<h2>{{ banner.heading }}</h2>
 		{{ banner.subheading|markdown }}
-		{% if banner.cta is defined %}
+		{% if banner.cta.enabled|default(false) %}
 			<a href="{{ banner.cta.target }}" class="button scrolly">{{ banner.cta.text }}</a>
 		{% endif %}
 	</div>

@@ -17,6 +17,7 @@ form:
               type: section
               title: Banner
               text: "Set the text, button, and background of your banner here."
+              # TODO: add 'change banner appearance options in theme options [link]'
               ordering@: header.title
 
               fields:
@@ -26,7 +27,7 @@ form:
                   validate:
                     required: true
 
-                .subheading: # TODO stub
+                .subheading:
                   type: text
                   label: Subheading
                   validate:
@@ -40,6 +41,38 @@ form:
                   accept:
                     - .png
                     - .jpg
+
+                .cta:
+                  title: Call to Action button
+                  type: section
+                  text: 'This button, when enabled, can be used to encourage users to an important page on the site.'
+                  fields:
+
+                    .enabled:
+                        type: toggle
+                        label: PLUGIN_ADMIN.ENABLED
+                        highlight: 1
+                        help: PLUGIN_ADMIN.ENABLED_HELP
+                        options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                        validate:
+                            type: bool
+
+                    .target:
+                      type: pages
+                      label: Target page
+                      show_all: false
+                      show_modular: false
+                      show_root: false
+                      multiple: false
+                      validate:
+                        required: false
+
+                    .text:
+                      type: text
+                      label: Button text
+                      default: "Alright let's go"
 
             content:
               unset@: true
