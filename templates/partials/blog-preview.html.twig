@@ -1,14 +1,15 @@
 {% set blog = blog ?: page.find('/blog') %}
 {% set comments = comments is defined ? comments : true %}
-{% set news = page.collection({'items':'@self.modules', 'filter': {'type': 'modular/blog-posts'}})|first %}
-{% set blog_items = blog.collection({'items': '@self.children', 'order': {'by': 'date', 'dir': 'desc'}, 'limit': news.header.options.limit|default(6)}) %}
+
+{% set blog_options = page.header.blog_preview %}
+{% set blog_items = blog.collection({'items': '@self.children', 'order': {'by': 'date', 'dir': 'desc'}, 'limit': blog_options.limit|default(6)}) %}
 
 {% if blog_items|length > 0 %}
 	<div class="col-12">
 
 		<!-- Blog -->
 			<section class="box blog">
-				{{ news.content|raw }}
+				<h2 class="major"><span>{{ blog_options.heading }}</span></h2>
 
 				<div>
 					<div class="row">

@@ -30,5 +30,8 @@ highlights:
     blurb: >
         Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu<br />
         ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
+blog_preview:
+    heading: Another Major Heading
+    # limit: 3
 ---
 Txt homepage content text yet to be rendered in a template, so unimportant
