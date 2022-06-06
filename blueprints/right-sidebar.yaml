@@ -22,6 +22,7 @@ form:
                 .image:
                   type: pagemediaselect
                   label: Page Media Image
+                  multiple: false
 
                 .classes:
                   type: text
