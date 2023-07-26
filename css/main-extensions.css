@@ -1,0 +1,5 @@
+/* Extensions to main.css, which is unmodified from source theme */
+
+.image .caption {
+	position: inherit; /* image overlays caption and prevents interaction (links) without this */
+}

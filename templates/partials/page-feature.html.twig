@@ -15,7 +15,7 @@
                 <p class="actual caption">{{ feature.caption }}</p>
             {% endif %}
             {% if feature.credit %}
-                <p class="credit caption">{{ feature.credit }}</p>
+                <p class="credit caption">{{ feature.credit|markdown(false) }}</p>
             {% endif %}
         </span>
     {% endif %}
