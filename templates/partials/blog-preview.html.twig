@@ -17,6 +17,7 @@
 						<div class="col-9 col-12-medium">
 							<div class="content">
 
+								{% block featured_post %}
 								<!-- Featured Post -->
 									{% set featured_post = blog_items|first %}
 									<article class="box post">
@@ -40,6 +41,7 @@
 											<a href="{{ blog.url }}" class="button">Continue Reading</a>
 										{% endif %}
 									</article>
+								{% endblock featured_post %}
 
 							</div>
 						</div>
