@@ -2,15 +2,14 @@
 
 {% block stylesheets %}
 
+	{{ parent() }}
+
 	{# TODO: allow setting these background paths in theme.yaml #}
-	{% set inline_css %}
+	{% style %}
 	#banner {
 		background-image: url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://images/banner.jpg') }}");
 	} 
-	{% endset %}
-
-	{{ parent() }}
-	{% do assets.addInlineCss(inline_css) %}
+	{% endstyle %}
 
 {% endblock %}
 
@@ -25,7 +24,7 @@
 				{{ include('partials/highlights.html.twig') }}
 
 				{% block features %}
-					{% include 'partials/page-features.html.twig' %}
+					{{ include('partials/page-features.html.twig') }}
 				{% endblock %}
 
 				{% block major_news %}
