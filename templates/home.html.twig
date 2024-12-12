@@ -4,11 +4,13 @@
 
 	{{ parent() }}
 
-	{# TODO: allow setting these background paths in theme.yaml #}
+	{% if page.header.banner.background is defined and page.media[page.header.banner.background] %}
+		{% set background_url = page.media[page.header.banner.background].url %}
+	{% else %}
+		{% set background_url = url('theme://images/banner.jpg') %}
+	{% endif %}
 	{% style %}
-	#banner {
-		background-image: url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://images/banner.jpg') }}");
-	} 
+		background-image: url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://css/images/overlay.png') }}"), url("{{ background_url }}");
 	{% endstyle %}
 
 {% endblock %}
