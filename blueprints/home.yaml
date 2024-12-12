@@ -35,12 +35,7 @@ form:
 
                 .background:
                   label: Background image
-                  type: filepicker
-                  folder: 'theme://images'
-                  preview_images: true
-                  accept:
-                    - .png
-                    - .jpg
+                  type: pagemediaselect
 
                 .cta:
                   title: Call to Action button
