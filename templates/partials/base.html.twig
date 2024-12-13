@@ -49,9 +49,9 @@
 			{% block logo_container %}
 			<div class="logo container">
 				<div>
-					<h1><a href="{{ home_url }}" id="logo">{{ theme_var('heading', site.title) }}</a></h1>
-					{%- if theme_var('subheading') %}
-						<p>{{ theme_var('subheading') }}</p>
+					<h1><a href="{{ home_url }}" id="logo">{{ config.theme.heading|default(site.title) }}</a></h1>
+					{%- if config.theme.subheading|default(false) %}
+						<p>{{ config.theme.subheading }}</p>
 					{% endif -%}
 				</div>
 			</div>
