@@ -1,6 +1,8 @@
 {% set blog = page.find('/blog') %}
-{% set blog_roll = blog.collection({'items': '@self.children', 'order': {'by': 'date', 'dir': 'desc'}, 'limit': item.options.limit}) %}
 {% set comments = comments is defined ? comments : true %}
+{% if blog_roll is not defined %}
+	{% set blog_roll = blog.collection({'items': '@self.children', 'order': {'by': 'date', 'dir': 'desc'}, 'limit': item.options.limit}) %}
+{% endif %}
 
 {% if blog_roll|length > 0 %}
 <!-- Recent Posts -->
