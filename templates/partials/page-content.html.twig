@@ -7,6 +7,7 @@
 			{% if page.header.heading.metadata|default(false) %}
 				{% include 'partials/heading-metadata.html.twig' ignore missing %}
 			{% endif %}
+			{% block after_heading '' %}
 		</header>
 
 		<section>
