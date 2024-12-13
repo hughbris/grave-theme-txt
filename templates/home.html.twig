@@ -10,7 +10,9 @@
 		{% set background_url = url('theme://images/banner.jpg') %}
 	{% endif %}
 	{% style %}
+	#banner {
 		background-image: url("{{ url('theme://css/images/overlay.png') }}"), url("{{ url('theme://css/images/overlay.png') }}"), url("{{ background_url }}");
+	}
 	{% endstyle %}
 
 {% endblock %}
