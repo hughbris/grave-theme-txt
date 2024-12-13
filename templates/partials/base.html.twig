@@ -46,6 +46,7 @@
 
 	<!-- Header -->
 		<header id="header">
+			{% block logo_container %}
 			<div class="logo container">
 				<div>
 					<h1><a href="{{ home_url }}" id="logo">{{ theme_var('heading', site.title) }}</a></h1>
@@ -54,6 +55,7 @@
 					{% endif -%}
 				</div>
 			</div>
+			{% endblock %}
 		</header>
 
 	{% block header_navigation %}
