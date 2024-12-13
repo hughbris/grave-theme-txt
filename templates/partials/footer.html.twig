@@ -13,14 +13,16 @@
 	{% endblock %}
 
 	{% block contacts %}
-		{% if config.site.globals.social is defined %}
+		{% set contacts_email = (config.theme.contacts.email is defined) and ('footer' in config.theme.contacts.email) %}
+
+		{% if config.site.globals.social is defined or contacts_email %}
 		<div class="col-12">
 			<!-- Contact -->
 				<section>
 					<h2 class="major"><span>Get in touch</span></h2>
 					<ul class="contact">
 					{% for network, account in config.site.globals.social|default([]) %}
-						{% set social_network = theme_config.social_networks[network] %}
+						{% set social_network = config.theme.social_networks[network] %}
 						{% if social_network is not empty %}
 							<li><a class="icon brands fa-{{ social_network.icon|default(network|lower) }}" href="{{ evaluate_twig(social_network.permalinks, {u: account}) }}"><span class="label">{{ social_network.label|default(network|capitalize) }}</span></a></li>
 						{% else %}

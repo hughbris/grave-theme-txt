@@ -1,4 +1,3 @@
-{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE HTML>
 <!--
     TXT by HTML5 UP
@@ -49,9 +48,9 @@
 		<header id="header">
 			<div class="logo container">
 				<div>
-					<h1><a href="{{ home_url }}" id="logo">{{ theme_config.heading|default(site.title) }}</a></h1>
-					{%- if theme_config.subheading is defined %}
-						<p>{{ theme_config.subheading }}</p>
+					<h1><a href="{{ home_url }}" id="logo">{{ theme_var('heading', site.title) }}</a></h1>
+					{%- if theme_var('subheading') %}
+						<p>{{ theme_var('subheading') }}</p>
 					{% endif -%}
 				</div>
 			</div>
