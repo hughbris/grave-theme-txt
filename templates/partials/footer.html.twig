@@ -29,6 +29,9 @@
 							{{ dump("Warning: social network \"#{network}\" from site.yaml is not defined in theme.yaml, unable to show icon in footer.") }}
 						{% endif %}
 					{% endfor %}
+					{% if contacts_email %}
+						<li><a class="icon fa-envelope" href="mailto:{{ site.author.email|safe_email }}"><span class="label">Send us email</span></a></li>
+					{% endif %}
 					</ul>
 				</section>
 		</div>
