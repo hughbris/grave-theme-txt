@@ -12,26 +12,26 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-	{% include 'partials/metadata.html.twig' %}
+	{{ include('partials/metadata.html.twig') }}
 
 	<link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" /> {# TODO: allow setting in theme.yaml #}
 	<link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
 
 {% block stylesheets %}
-	{% do assets.addCss('theme://css/main.css', 98) %}
-	{% do assets.addCss('theme://css/main-extensions.css', 98) %}
-	{% do assets.addCss('theme://css/custom.css', 98) %}
+	{% style 'theme://css/main.css' priority: 98 %}
+	{% style 'theme://css/main-extensions.css' priority: 98 %}
+	{% style 'theme://css/custom.css' priority: 98 %}
 {% endblock %}
 
 {% block javascripts %}
-	{% do assets.addJs('theme://js/jquery.min.js', {'group': 'bottom'}) %}
-	{% do assets.addJs('theme://js/jquery.dropotron.min.js', {'group': 'bottom'}) %}
-	{% do assets.addJs('theme://js/jquery.scrolly.min.js', {'group': 'bottom'}) %}
-	{% do assets.addJs('theme://js/browser.min.js', {'group': 'bottom'}) %}
-	{% do assets.addJs('theme://js/breakpoints.min.js', {'group': 'bottom'}) %}
-	{% do assets.addJs('theme://js/util.js', {'group': 'bottom'}) %}
-	{% do assets.addJs('theme://js/main.js', {'group': 'bottom'}) %}
+	{% script 'theme://js/jquery.min.js'  at 'bottom' %}
+	{% script 'theme://js/jquery.dropotron.min.js'  at 'bottom' %}
+	{% script 'theme://js/jquery.scrolly.min.js'  at 'bottom' %}
+	{% script 'theme://js/browser.min.js'  at 'bottom' %}
+	{% script 'theme://js/breakpoints.min.js'  at 'bottom' %}
+	{% script 'theme://js/util.js'  at 'bottom' %}
+	{% script 'theme://js/main.js'  at 'bottom' %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -60,7 +60,7 @@
 	{% block header_navigation %}
 	<!-- Nav -->
 		<nav id="nav">
-			{% include 'partials/navigation.html.twig' %}
+			{{ include('partials/navigation.html.twig') }}
 		</nav>
 	{% endblock %}
 
@@ -82,7 +82,7 @@
 	<!-- Footer -->
 		<footer id="footer">
 			<div class="container">
-				{% include 'partials/footer.html.twig' %}
+				{{ include('partials/footer.html.twig') }}
 			</div>
 		</footer>
 {% endblock %}

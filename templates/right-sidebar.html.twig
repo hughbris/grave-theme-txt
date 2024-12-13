@@ -5,7 +5,7 @@
 	<div class="col-9 col-12-medium">
 		<div class="content">
 			{% block inner_content %}
-				{% include 'partials/page-content.html.twig' %}
+				{{ include('partials/page-content.html.twig') }}
 			{% endblock %}
 		</div>
 	</div>
@@ -13,7 +13,7 @@
 	<div class="col-3 col-12-medium">
 		<div class="sidebar">
 		{% block sidebar %}
-			{% include 'partials/sidebar.html.twig' %}
+			{{ include('partials/sidebar.html.twig') }}
 		{% endblock %}
 		</div>
 	</div>
@@ -21,5 +21,5 @@
 {% endblock %}
 
 {% block features %}
-	{% include 'partials/page-features.html.twig' %}
+	{{ include('partials/page-features.html.twig') }}
 {% endblock %}
