@@ -18,9 +18,15 @@
 {% endblock head %}
 
 {% block stylesheets %}
+	{% block fa_stylesheet %}
+		{% set fa_conformance = config.theme.conformance.fontawesome ?? true %}
+		{% if fa_conformance %}
+			{% style 'theme://css/fontawesome-all.min.css' priority: 99 %}
+		{% endif %}
+	{% endblock fa_stylesheet %}
 	{% style 'theme://css/main.css' priority: 98 %}
-	{% style 'theme://css/main-extensions.css' priority: 98 %}
-	{% style 'theme://css/custom.css' priority: 98 %}
+	{% style 'theme://css/main-extensions.css' priority: 97 %}
+	{% style 'theme://css/custom.css' priority: 96 %}
 {% endblock %}
 
 {% block javascripts %}
