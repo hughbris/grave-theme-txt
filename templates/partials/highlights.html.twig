@@ -5,8 +5,9 @@
 			<section class="box highlight">
 				{% if highlights.circles is defined %}
 				<ul class="special">
+					{% include 'partials/check-fa.twig' %}
 					{% for circle in highlights.circles if (circle.active or circle.active is not defined) %}
-					<li><a href="{{ circle.target }}" class="icon solid fa-{{ circle.icon }}"><span class="label">{{ circle.label }}</span></a></li>
+					<li><a href="{{ circle.target }}" class="icon solid{{ not(fa_conformance) ? ' far' }} fa-{{ circle.icon }}"><span class="label">{{ circle.label }}</span></a></li>
 					{% endfor %}
 				</ul>
 				{% endif %}

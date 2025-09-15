@@ -1,0 +1,10 @@
+{# Since we can't assume FontAwesome has been loaded by the shortcode-core plugin on this page (since c3d7b71), we may need to load it explicitly here. This template does that. #}
+
+{% if not(fa_conformance) %}
+	{% set shortcode_setting = config.plugins['shortcode-core'] %}
+	{% if shortcode_setting.enabled and shortcode_setting.fontawesome.url %}
+		{% do assets.addCss(shortcode_setting.fontawesome.url) %} {# Grav's Twig style tag crashes here for some reason #}
+	{% else %}
+		{{ dump('partials/check-fa: Check your icons on this page as a FontAwesome URL from the shortcodes plugin could not be found.') }}
+	{% endif %}
+{% endif %}

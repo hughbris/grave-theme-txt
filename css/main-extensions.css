@@ -3,3 +3,9 @@
 .image .caption {
 	position: inherit; /* image overlays caption and prevents interaction (links) without this */
 }
+
+/* fixes a problem in some contexts where .fab, .far etc have their widths set not very large */
+.special > li a:link.icon,
+.meta > li.icon {
+	width: inherit;
+}

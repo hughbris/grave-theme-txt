@@ -14,10 +14,12 @@
 				<article class="box post-summary">
 					<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 					<ul class="meta">
-						<li class="icon fa-clock">{{ post.date|nicetime }}</li>
-						{% if comments %}
-						<li class="icon fa-comments"><a href="#">34</a></li>
-						{% endif %} {# FIXME #}
+						{{ include('partials/heading-metadata.html.twig', {
+							post_updated: post.date,
+							comment_count: 34,
+							comments_link: '#',
+							}) }}
+							{# FIXME- these dummy values #}
 					</ul>
 				</article>
 			</li>

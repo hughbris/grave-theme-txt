@@ -5,6 +5,7 @@
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+{% set fa_conformance = config.theme.conformance.fontawesome ?? true %}
 <head>
 {% block head %}
 	<title>{% if header.title %}{{ header.title|e('html') }} - {% endif %}{{ site.title|e('html') }}</title>
@@ -19,7 +20,6 @@
 
 {% block stylesheets %}
 	{% block fa_stylesheet %}
-		{% set fa_conformance = config.theme.conformance.fontawesome ?? true %}
 		{% if fa_conformance %}
 			{% style 'theme://css/fontawesome-all.min.css' priority: 99 %}
 		{% endif %}

@@ -5,7 +5,11 @@
 			<h2>{{ page.title }}</h2>
 			{% if page.header.subtitle is defined %}<p>{{ page.header.subtitle }}</p>{% endif %}
 			{% if page.header.heading.metadata|default(false) %}
-				{% include 'partials/heading-metadata.html.twig' ignore missing %}
+				{{ include('partials/heading-metadata.html.twig', {
+					comment_count: 1024,
+					comments_link: '#',
+					}) }}
+					{# FIXME- these dummy values #}
 			{% endif %}
 			{% block after_heading '' %}
 		</header>

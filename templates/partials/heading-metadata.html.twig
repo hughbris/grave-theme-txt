@@ -1,4 +1,12 @@
+{% include 'partials/check-fa.twig' %}
+{% set post_updated = post_updated|default(page.date) %}
+{# optional parameters:
+- comment_count - will default to 'Comments' but you could pass another string if not the real count
+- comments_link
+#}
 <ul class="meta">
-	<li class="icon fa-clock">{{ page.date|nicetime }}</li>
-	<li class="icon fa-comments"><a href="#">1,024</a></li>{# FIXME #}
+	<li class="icon{{ not(fa_conformance) ? ' far' }} fa-clock">{{ post_updated|nicetime }}</li>
+	{% if comment_count or comments_link %}
+	<li class="icon{{ not(fa_conformance) ? ' far' }} fa-comments">{% if comments_link %}<a href="{{ comments_link }}">{% endif %}{{ comment_count|default('Comments') }}{% if comments_link %}</a>{% endif %}</li>
+	{% endif %}
 </ul>

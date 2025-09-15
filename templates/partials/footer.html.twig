@@ -21,10 +21,12 @@
 				<section>
 					<h2 class="major"><span>Get in touch</span></h2>
 					<ul class="contact">
-					{% set fa_conformance = config.theme.conformance.fontawesome ?? true %}
 					{% for network, account in config.site.globals.social|default([]) %}
 						{% set social_network = config.theme.social_networks[network] %}
 						{% if social_network is not empty %}
+							{% if loop.index == 1 %}
+								{% include 'partials/check-fa.twig' %}
+							{% endif %}
 							<li><a class="icon brands{{ not(fa_conformance) ? ' fab' }} fa-{{ social_network.icon|default(network|lower) }}" href="{{ evaluate_twig(social_network.permalinks, {u: account}) }}"><span class="label">{{ social_network.label|default(network|capitalize) }}</span></a></li>
 						{% else %}
 							{{ dump("Warning: social network \"#{network}\" from site.yaml is not defined in theme.yaml, unable to show icon in footer.") }}

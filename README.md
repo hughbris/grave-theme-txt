@@ -49,6 +49,7 @@ Install, enable, and configure `shortcode-core.yaml` and add the following value
 
 ```yaml
 fontawesome:
+  load: true
   url: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css
   v5: true # set your confusion aside
 ```
@@ -68,12 +69,14 @@ To use simple HTML in your Twig, go for this kind of markup:
 ```
 _They seem to do OK without the `icon brands` classes._
 
+> **Danger! Danger!** Be aware that pages which don't use FA shortcodes won't load FontAwesome's styles, so any icons you try to add with raw HTML probably won't render correctly. However, I've added a backstop for all such templates in this theme. It will check the theme `conformance` setting and then the Shortcode plugin's `fontawseome.url` and load that CSS if required. It also happens that this theme's footer has FA icons in raw HTML/Twig, so you'll be safe as long as this is used. It would be good practice to call `{% include 'partials/check-fa.twig' %}` in any new template you make which includes FontAwesome icons created without shortcodes.
+
 If you're not into the whole brevity thing, and in cases like the footer of this Txt theme — where there is no shortcode out of the box that will reproduce it — use markup like this in your Twig:
 
 ```twig
 <a class="icon brands fab fa-x-twitter" href="https://xcancel.com/{{ account }}"><span class="label">XCancel</span></a>
 ```
-_The main difference is the addition of a `fab` attribute. This particular theme layout seems to require retaining the `icon brands` classes._
+_The main difference is the addition of a `fab` attribute (or `fas`, `far`, `fal`, `fat`). This particular theme layout seems to require retaining the `icon brands` classes._
 
 **Method 2, raw dogging:** Copy (if applicable) and override the Twig block `fa_stylesheet` in your theme's `partials/base.html.twig` template. Note that this is nested within the block called`stylesheets`, so if you are also messing with that, you'll need to make sure you don't blitz it.
 
