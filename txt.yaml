@@ -21,8 +21,6 @@ social_networks: # the text '{{ account }}' will be substituted for the account 
   linkedin:
     label: LinkedIn
     permalinks: 'https://www.linkedin.com/in/{{ account }}'
-  instagram:
-    permalinks: 'https://www.instagram.com/{{ account }}'
   bluesky:
     label: BlueSky
     permalinks: 'https://bsky.app/profile/{{ account }}'
