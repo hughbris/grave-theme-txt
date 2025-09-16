@@ -4,7 +4,7 @@
 		{% if p.children.visible.count > 0 %}
 			<li{{ current_page_class|raw }}>
 				<a href="{{ p.url }}">
-					{% if p.header.icon %}{% set nav_icons_used = true %}<i class="fa{{ not(fa_conformance) ? ' far' }} fa-{{ p.header.icon }}"></i>{% endif %}
+					{{ _self.addIcon(p.header) }}
 					{{ p.menu }}
 				</a>
 				<ul>
@@ -14,12 +14,21 @@
 		{% else %}
 			<li{{ current_page_class|raw }}>
 				<a href="{{ p.url }}">
-					{% if p.header.icon %}{% set nav_icons_used = true %}<i class="fa{{ not(fa_conformance) ? ' far' }} fa-{{ p.header.icon }}"></i>{% endif %}
+					{{ _self.addIcon(p.header) }}
 					{{ p.menu }}
 				</a>
 			</li>
 		{% endif %}
 	{% endfor %}
+{% endmacro %}
+
+{% macro addIcon(nav_item) %}
+	{% spaceless %}
+		{% if nav_item.icon %}
+			{% set nav_icons_used = true %}
+			{{ include('partials/navigation-icon.html.twig', {nav_item: nav_item} ) }}
+		{% endif %}
+	{% endspaceless %}
 {% endmacro %}
 
 {% set nav_icons_used = false %}
@@ -30,7 +39,7 @@
 		{% for page in pages.children.visible %}
 			<li{% if page.active or page.activeChild %} class="current"{% endif %}>
 				<a href="{{ page.url }}">
-					{% if page.header.icon %}{% set nav_icons_used = true %}<i class="fa{{ not(fa_conformance) ? ' far' }} fa-{{ page.header.icon }}"></i>{% endif %} {# TODO: check this, probably not needed anyway #}
+					{{ _self.addIcon(page.header) }}
 					{{ page.menu }}
 				</a>
 			</li>
@@ -39,7 +48,7 @@
 	{% for mitem in site.menu %}
 		<li>
 			<a href="{{ mitem.url }}">
-				{% if mitem.icon %}{% set nav_icons_used = true %}<i class="fa{{ not(fa_conformance) ? ' far' }} fa-{{ mitem.icon }}"></i>{% endif %}
+				{{ _self.addIcon(mitem) }}
 				{{ mitem.text }}
 			</a>
 		</li>
