@@ -9,13 +9,22 @@ conformance:
 social_networks: # the text '{{ account }}' will be substituted for the account name provided in site.yaml
   facebook:
     icon: facebook-f
-    permalinks: 'https://facebook.com/u/{{ account }}'
+    permalinks: 'https://facebook.com/{{ account }}'
   twitter:
-    permalinks: 'https://twitter.com/u/{{ account }}'
+    permalinks: 'https://twitter.com/{{ account }}'
+  x-twitter: # perhaps take a step back and think about your life choices here
+    permalinks: 'https://x.com/{{ account }}'
   instagram:
     permalinks: 'https://www.instagram.com/{{ account }}'
   dribbble:
-    permalinks: 'https://{{ account }}.dribble.com'
+    permalinks: 'https://{{ account }}.dribbble.com'
   linkedin:
     label: LinkedIn
     permalinks: 'https://www.linkedin.com/in/{{ account }}'
+  instagram:
+    permalinks: 'https://www.instagram.com/{{ account }}'
+  bluesky:
+    label: BlueSky
+    permalinks: 'https://bsky.app/profile/{{ account }}'
+  mastodon:
+    permalinks: 'https://mastodon.social/@{{ account }}'
